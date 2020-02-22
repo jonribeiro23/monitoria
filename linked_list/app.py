@@ -42,7 +42,8 @@ class LinkedList(object):
 
 		self.size -= 1
 
-		current_node = None
+		current_node = self.head
+		previous_node = None
 
 		while current_node.data != data:
 			previous_node = current_node
@@ -53,7 +54,7 @@ class LinkedList(object):
 
 
 	# O(1)
-	def size(self):
+	def size1(self):
 		return self.size
 
 
@@ -65,6 +66,8 @@ class LinkedList(object):
 		while actual_node is not None:
 			size +=1
 			actual_node = actual_node.next_node
+
+		return size
 
 
 	def traverse_list(self):
@@ -78,3 +81,11 @@ class LinkedList(object):
 
 
 		
+# linked_list = LinkedList()
+
+# linked_list.insert_start(12)
+# linked_list.insert_start(122)
+# linked_list.insert_start(3)
+# linked_list.insert_end(51)
+
+# linked_list.traverse_list()
