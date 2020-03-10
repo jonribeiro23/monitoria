@@ -1,0 +1,14 @@
+-- Tupla, Lista, Dicionário --
+
+
+() - Tupla - Imutável
+--> (1, 2, 3)
+--> ('casa', 'cavalo', 'flor')
+
+[] - Array/Listas - Mutável
+--> [1, 2, 3]
+--> ['vida', 'amor', 'felicidade']
+
+{} - Dicionário - Índice
+--> {'animal': 'cavalo', 'idade': 2, 'cor': 'caramelo'}
+
