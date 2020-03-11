@@ -1,3 +1,4 @@
+import time
 class Teatro:
 	def __init__(self, linha, coluna):
 		self.linha = linha
@@ -17,6 +18,7 @@ class Teatro:
 	def exibe_teatro(self):
 		for i in range(self.get_linha()):
 			for j in range(self.get_coluna()):
+				# time.sleep(0.2)
 				print(self.teatro[i][j], end=' ')
 			print()
 
@@ -41,8 +43,8 @@ class Teatro:
 		if self.teatro[linha_nova][coluna_nova] == True:
 			print('Impossível trocar. O lugar já está ocupado')
 		else:
-			self.teatro[linha_antiga][coluna_antiga] = False
 			self.teatro[linha_nova][coluna_nova] = True
+			self.teatro[linha_antiga][coluna_antiga] = False
 
 
 	def incrementa(self):
@@ -51,6 +53,7 @@ class Teatro:
 
 	def decrementa(self):
 		self.qtd -= 1
+	
 	
 	# ==== GETTERS e SETTERS ===
 	def get_linha(self):

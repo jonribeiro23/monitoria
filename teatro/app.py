@@ -1,15 +1,49 @@
 import teatro
+''' subprocess é uma biblioteca para utilizar comandos Linux.
+ Se você estiver utilizando Windows, apague as linhas que
+ contêm subprocess '''
+import subprocess
 
-teatro6 = teatro.Teatro(10, 10)
-teatro6.exibe_teatro()
-teatro6.get_qtd()
-print('='*40)
-teatro1 = teatro.Teatro(1, 1)
-teatro1.exibe_teatro()
-print('='*40)
-teatro2 = teatro.Teatro(2, 5)
-teatro2.exibe_teatro()
-print('='*40)
-teatro3 = teatro.Teatro(4, 2)
-teatro3.exibe_teatro()
+teatro = teatro.Teatro(5, 5)
+opc = 0
 
+while opc != 9:
+	print()
+	print('=== MENU ===')
+	print()
+	print('1 - Ver teatro')
+	print('2 - Comprar ingresso')
+	print('3 - Trocar ingresso')
+	print('4 - Devolver ingresso')
+	print('9 - Sair')
+	print('============')
+	opc = int(input('Digite uma opção: '))
+	
+	# subprocess.call(['clear'])
+
+	if opc == 1:
+		teatro.exibe_teatro()
+	
+	elif opc == 2:
+		fila = int(input('Número da fila: '))
+		cadeira = int(input('Número da cadeira: '))
+		teatro.vende_ingresso(fila, cadeira)
+
+	elif opc == 3:
+		fila_antiga = int(input('Fila: '))
+		cadeira_antiga = int(input('Cadeira antiga: '))
+
+		nova_fila = int(input('Nova fila: '))
+		nova_cadeira = int(input('Nova cadeira: '))
+		teatro.trocar_ingresso(fila_antiga, cadeira_antiga, nova_fila, nova_cadeira)
+
+	elif opc == 4:
+		fila = int(input('Fila: '))
+		cadeira = int(input('Cadeira: '))
+		teatro.devolve_ingresso(fila, cadeira)
+
+	elif opc == 9:
+		print('Até mais! Volte sempre')
+
+	else:
+		print('Opção inválida. Tente outra.')
