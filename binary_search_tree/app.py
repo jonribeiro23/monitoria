@@ -1,0 +1,27 @@
+from binary_search_tree import BinarySearchTree
+
+bst = BinarySearchTree()
+bst.insert(10)
+bst.insert(15)
+bst.insert(5)
+bst.insert(7)
+bst.insert(25)
+print(bst.get_min_value())
+print(bst.get_max_value())
+bst.traverse()
+bst.remove(7)
+bst.traverse()
+
+# print()
+# print('*'*20)
+# print()
+
+# bst2 = BinarySearchTree()
+# bst2.insert('r')
+# bst2.insert('t')
+# bst2.insert('g')
+# bst2.insert('u')
+# bst2.insert('c')
+# print(bst2.get_min_value())
+# print(bst2.get_max_value())
+# bst2.traverse()
